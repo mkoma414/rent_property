@@ -19,12 +19,11 @@ class PropertiesController < ApplicationController
   end
 
   def edit
-
+    
   end
 
   def show
     @station = @property.stations
-    
   end
 
   def update
@@ -45,8 +44,8 @@ class PropertiesController < ApplicationController
 
   def property_params
     # params.require(:property).permit(:property_name, :fee, :address, :building_age, :remarks)
-      params.require(:property).permit(:property_name, :fee, :address, :building_age, :remarks,
-        stations_attributes: [:line_name, :station_name, :walk_minutes])
+      params.require(:property).permit(:id, :property_name, :fee, :address, :building_age, :remarks,
+        stations_attributes: [:id, :line_name, :station_name, :walk_minutes])
   end
 
 end
